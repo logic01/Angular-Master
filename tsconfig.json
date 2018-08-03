@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "master-common": [
+        "dist/master-common"
+      ],
+      "master-common/*": [
+        "dist/master-common/*"
+      ]
+    }
   }
 }
