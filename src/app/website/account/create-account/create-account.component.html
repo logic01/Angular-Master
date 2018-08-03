@@ -1,0 +1,15 @@
+<form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field>
+      <input type="username" matInput formControlName="username" placeholder="username">
+      <mat-error>Please enter a username.</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input type="password" matInput formControlName="password" placeholder="password">
+      <mat-error>Please enter a password.</mat-error>
+    </mat-form-field>
+  </div>
+  <button mat-raised-button type="submit" color="primary">OK</button>
+</form>
