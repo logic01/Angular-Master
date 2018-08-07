@@ -1,6 +1,6 @@
 export class Account {
 
-    public userid: number;
+    public id: number;
     public username: string;
     public password: string;
 }

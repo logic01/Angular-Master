@@ -23,6 +23,18 @@
       ],
       "master-common/*": [
         "dist/master-common/*"
+      ],
+      "models/*": [
+        "src/app/models/*"
+      ],
+      "actions/*": [
+        "src/app/ngrx/actions/*"
+      ],
+      "api/*": [
+        "src/app/api/services/*"
+      ],
+      "store/*": [
+        "src/app/ngrx/store/*"
       ]
     }
   }

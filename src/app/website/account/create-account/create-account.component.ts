@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Store } from '@ngrx/store';
+
+import { CreateAccountAction } from 'actions/account.actions';
 import { FormHelperService } from 'master-common';
+import { Account } from 'models/account';
+import { AppState } from 'store/app-state';
 
 @Component({
   selector: 'am-create-account',
@@ -10,7 +16,10 @@ import { FormHelperService } from 'master-common';
 export class CreateAccountComponent implements OnInit {
 
   public accountForm: FormGroup;
-  constructor(private formHelper: FormHelperService) { }
+
+  constructor(
+    private formHelper: FormHelperService,
+    private store: Store<AppState>) { }
 
   ngOnInit() {
     this.accountForm = new FormGroup({
@@ -26,5 +35,12 @@ export class CreateAccountComponent implements OnInit {
       this.formHelper.setFocusOnError(this.accountForm);
       return;
     }
+
+    const account = new Account();
+
+    account.username = this.accountForm.get('username').value;
+    account.password = this.accountForm.get('password').value;
+
+    this.store.dispatch(new CreateAccountAction(account));
   }
 }
