@@ -14,12 +14,12 @@ export class AccountService {
 
   post(account: Account) {
     const body = JSON.stringify(account);
-    return this.http.post<Account>(this.url, JSON.stringify(body));
+    return this.http.post<Account>(this.url, body);
   }
 
   put(account: Account) {
     const body = JSON.stringify(account);
-    return this.http.put<Account>(this.url, JSON.stringify(body));
+    return this.http.put<Account>(this.url, body);
   }
 
   get(id: number) {

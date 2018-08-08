@@ -10,7 +10,7 @@ import { accountReducer } from './ngrx/reducers/account.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { SecurityKey } from './api/interceptors/security-key.interceptor';
+import { HeadersInterceptor } from './api/interceptors/headers.interceptor';
 import { AppComponent } from './app.component';
 import { CreateAccountComponent } from './website/account/create-account/create-account.component';
 import { EditAccountComponent } from './website/account/edit-account/edit-account.component';
@@ -35,7 +35,7 @@ import { EditAccountComponent } from './website/account/edit-account/edit-accoun
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: SecurityKey,
+      useClass: HeadersInterceptor,
       multi: true
     }
   ],
