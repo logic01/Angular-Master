@@ -1,7 +1,6 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,8 +11,10 @@ import { StoreModule } from '@ngrx/store';
 
 import { HeadersInterceptor } from './api/interceptors/headers.interceptor';
 import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routes';
 import { CreateAccountComponent } from './website/account/create-account/create-account.component';
 import { EditAccountComponent } from './website/account/edit-account/edit-account.component';
+import { MatModule } from './website/mat.module';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,12 @@ import { EditAccountComponent } from './website/account/edit-account/edit-accoun
     EditAccountComponent
   ],
   imports: [
+    AppRoutes,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatInputModule,
+    MatModule,
     StoreModule.forRoot({ account: accountReducer }),
     EffectsModule.forRoot([AccountEffects]),
   ],

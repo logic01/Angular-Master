@@ -1,5 +1,6 @@
-<div class="header"></div>
-<div class="body>">
-  <am-create-account></am-create-account>
-</div>
-<div class="footer"> </div>
+<mat-sidenav-container [hasBackdrop]="true" class="main">
+  <mat-sidenav class="sideNave" mode="side" opened hasBackdrop style="width: 140px">Account</mat-sidenav>
+  <mat-sidenav-content>
+    <am-create-account></am-create-account>
+  </mat-sidenav-content>
+</mat-sidenav-container>
