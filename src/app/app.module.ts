@@ -17,6 +17,10 @@ import { AppRoutes } from './app.routes';
 import { MatModule } from './design/mat.module';
 import { CreateAccountComponent } from './website/account/create-account/create-account.component';
 import { EditAccountComponent } from './website/account/edit-account/edit-account.component';
+import { ArticleComponent } from './website/blog/article/article.component';
+import { BlogComponent } from './website/blog/blog/blog.component';
+import { ExamplesComponent } from './website/examples/examples.component';
+import { ProfileComponent } from './website/profile/profile.component';
 import { ToolbarComponent } from './website/toolbar/toolbar.component';
 
 @NgModule({
@@ -24,7 +28,11 @@ import { ToolbarComponent } from './website/toolbar/toolbar.component';
     AppComponent,
     CreateAccountComponent,
     EditAccountComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ExamplesComponent,
+    BlogComponent,
+    ArticleComponent,
+    ProfileComponent
   ],
   imports: [
     AppRoutes,
