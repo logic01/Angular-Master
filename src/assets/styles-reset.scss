@@ -1,0 +1,12 @@
+
+/* These Bootstrap settings don't play nice with Angular Material 6 so we override them*/
+* {
+    &:active,
+    :focus {
+      outline: none !important;
+    }
+  }
+  
+  label {
+    margin-bottom: 0;
+  }

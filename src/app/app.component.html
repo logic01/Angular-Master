@@ -1,6 +1,83 @@
+<header>
+  <mat-toolbar color="accent" class="no-padding">
+    <div class="container-fluid no-padding">
+      <div class="row">
+        <div class="col-md-1">
+          <i class="material-icons" (click)="sidenav.toggle()">list</i>
+        </div>
+        <div class="col-md-4"> </div>
+        <div class="col-md-2">
+          Angular Master
+        </div>
+        <div class="col-md-5"> </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</header>
+
+<mat-sidenav-container>
+
+  <mat-sidenav #sidenav>
+    <p>
+      <button mat-raised-button type="submit" color="accent">Profile</button>
+    </p>
+    <p>
+      <button mat-raised-button type="submit" color="accent">Examples</button>
+    </p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <body>
+      <section class="container">
+        <div class="row">
+          <mat-card class="col-md-3">
+            <mat-card-title>Observables</mat-card-title>
+            <mat-card-subtitle>A few examples of Observables in action!</mat-card-subtitle>
+            <mat-card-actions>
+              <button mat-raised-button type="submit" color="accent">Concat</button>
+              <button mat-raised-button type="submit" color="accent">ForkJoin</button>
+              <button mat-raised-button type="submit" color="accent">MergeMap</button>
+              <button mat-raised-button type="submit" color="accent">Pairwise</button>
+              <button mat-raised-button type="submit" color="accent">SwitchMap</button>
+              <button mat-raised-button type="submit" color="accent">CombineLatest</button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="col-md-3">
+            <mat-card-title>Pipes</mat-card-title>
+            <mat-card-subtitle>A few examples of pipes in action!</mat-card-subtitle>
+            <mat-card-actions>
+              <button mat-raised-button type="submit" color="accent">Date</button>
+              <button mat-raised-button type="submit" color="accent">UpperCase</button>
+              <button mat-raised-button type="submit" color="accent">LowerCase</button>
+              <button mat-raised-button type="submit" color="accent">Currency</button>
+              <button mat-raised-button type="submit" color="accent">Percent</button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="col-md-3">
+            <mat-card-title>Forms</mat-card-title>
+            <mat-card-subtitle>A few examples of forms in action!</mat-card-subtitle>
+            <mat-card-actions>
+              <button mat-raised-button type="submit" color="accent">Template</button>
+              <button mat-raised-button type="submit" color="accent">Reactive</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </section>
+
+    </body>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!-- Sdiebar using MAT?
 <mat-sidenav-container [hasBackdrop]="true" class="main">
   <mat-sidenav class="sideNave" mode="side" opened hasBackdrop style="width: 140px">Account</mat-sidenav>
   <mat-sidenav-content>
     <am-create-account></am-create-account>
   </mat-sidenav-content>
 </mat-sidenav-container>
+-->
