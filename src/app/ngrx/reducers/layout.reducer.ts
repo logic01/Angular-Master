@@ -1,32 +1,23 @@
-import {
-    LayoutActionTypes,
-    LayoutActionsUnion
-} from '../actions/layout.actions';
+import { LayoutActionsUnion, LayoutActionTypes } from '../actions/layout.actions';
+import { Layout } from 'store/layout';
 
-
-export interface State {
-    showSidenav: boolean;
-}
-
-const initialState: State = {
-    showSidenav: false,
+const initialState: Layout = {
+    sidenavOpen: false
 };
 
-export function reducer(state: State = initialState, action: LayoutActionsUnion): State {
+export function layoutReducer(state: Layout = initialState, action: LayoutActionsUnion): Layout {
     switch (action.type) {
         case LayoutActionTypes.CloseSidenav:
             return {
-                showSidenav: false,
+                sidenavOpen: false,
             };
 
         case LayoutActionTypes.OpenSidenav:
             return {
-                showSidenav: true,
+                sidenavOpen: true,
             };
 
         default:
             return state;
     }
 }
-
-export const getShowSidenav = (state: State) => state.showSidenav;

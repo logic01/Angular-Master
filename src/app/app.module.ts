@@ -6,21 +6,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AccountEffects } from './ngrx/effects/account.effects';
 import { accountReducer } from './ngrx/reducers/account.reducers';
+import { layoutReducer } from './ngrx/reducers/layout.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { HeadersInterceptor } from './api/interceptors/headers.interceptor';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
+import { MatModule } from './design/mat.module';
 import { CreateAccountComponent } from './website/account/create-account/create-account.component';
 import { EditAccountComponent } from './website/account/edit-account/edit-account.component';
-import { MatModule } from './website/mat.module';
+import { ToolbarComponent } from './website/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateAccountComponent,
-    EditAccountComponent
+    EditAccountComponent,
+    ToolbarComponent
   ],
   imports: [
     AppRoutes,
@@ -29,8 +33,9 @@ import { MatModule } from './website/mat.module';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatModule,
-    StoreModule.forRoot({ account: accountReducer }),
+    StoreModule.forRoot({ account: accountReducer, layout: layoutReducer }),
     EffectsModule.forRoot([AccountEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 10 })
   ],
   providers: [
     {

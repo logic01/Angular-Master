@@ -1,31 +1,20 @@
 <header>
-  <mat-toolbar color="accent" class="no-padding">
-    <div class="container-fluid no-padding">
-      <div class="row">
-        <div class="col-md-1">
-          <i class="material-icons" (click)="sidenav.toggle()">list</i>
-        </div>
-        <div class="col-md-4"> </div>
-        <div class="col-md-2">
-          Angular Master
-        </div>
-        <div class="col-md-5"> </div>
-      </div>
-    </div>
-  </mat-toolbar>
+  <am-toolbar></am-toolbar>
 </header>
 
-<mat-sidenav-container>
 
-  <mat-sidenav #sidenav>
+<mat-sidenav-container>
+  <mat-sidenav [opened]="sideNaveOpen$ | async">
     <p>
       <button mat-raised-button type="submit" color="accent">Profile</button>
     </p>
     <p>
       <button mat-raised-button type="submit" color="accent">Examples</button>
     </p>
+    <p>
+      <button mat-raised-button type="submit" color="accent">Blog</button>
+    </p>
   </mat-sidenav>
-
   <mat-sidenav-content>
 
     <body>
