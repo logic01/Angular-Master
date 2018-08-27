@@ -19,7 +19,6 @@ import { CreateAccountComponent } from './website/account/create-account/create-
 import { EditAccountComponent } from './website/account/edit-account/edit-account.component';
 import { ArticleComponent } from './website/blog/article/article.component';
 import { BlogComponent } from './website/blog/blog/blog.component';
-import { ExamplesComponent } from './website/examples/examples.component';
 import { ProfileComponent } from './website/profile/profile.component';
 import { ToolbarComponent } from './website/toolbar/toolbar.component';
 
@@ -29,7 +28,6 @@ import { ToolbarComponent } from './website/toolbar/toolbar.component';
     CreateAccountComponent,
     EditAccountComponent,
     ToolbarComponent,
-    ExamplesComponent,
     BlogComponent,
     ArticleComponent,
     ProfileComponent
