@@ -3,31 +3,56 @@
     <mat-card-title>Observables</mat-card-title>
     <mat-card-subtitle>A few examples of Observables in action!</mat-card-subtitle>
     <mat-card-actions>
-      <button mat-raised-button type="submit" color="accent">Concat</button>
-      <button mat-raised-button type="submit" color="accent">ForkJoin</button>
-      <button mat-raised-button type="submit" color="accent">MergeMap</button>
-      <button mat-raised-button type="submit" color="accent">Pairwise</button>
-      <button mat-raised-button type="submit" color="accent">SwitchMap</button>
-      <button mat-raised-button type="submit" color="accent">CombineLatest</button>
+      <div *ngFor="let item of observableDef">
+        <button mat-raised-button type="submit" color="accent" (click)="viewKey = item">{{item}}</button>
+      </div>
     </mat-card-actions>
   </mat-card>
   <mat-card class="col-md-3">
     <mat-card-title>Pipes</mat-card-title>
     <mat-card-subtitle>A few examples of pipes in action!</mat-card-subtitle>
     <mat-card-actions>
-      <button mat-raised-button type="submit" color="accent">Date</button>
-      <button mat-raised-button type="submit" color="accent">UpperCase</button>
-      <button mat-raised-button type="submit" color="accent">LowerCase</button>
-      <button mat-raised-button type="submit" color="accent">Currency</button>
-      <button mat-raised-button type="submit" color="accent">Percent</button>
+      <div *ngFor="let item of pipesDef">
+        <button mat-raised-button type="submit" color="accent" (click)="viewKey = item">{{item}}</button>
+      </div>
     </mat-card-actions>
   </mat-card>
   <mat-card class="col-md-3">
     <mat-card-title>Forms</mat-card-title>
     <mat-card-subtitle>A few examples of forms in action!</mat-card-subtitle>
     <mat-card-actions>
-      <button mat-raised-button type="submit" color="accent">Template</button>
-      <button mat-raised-button type="submit" color="accent">Reactive</button>
+      <div *ngFor="let item of formsDef">
+        <button mat-raised-button type="submit" color="accent" (click)="viewKey = item">{{item}}</button>
+      </div>
     </mat-card-actions>
   </mat-card>
+  <mat-card class="col-md-3">
+    <mat-card-title>Directives</mat-card-title>
+    <mat-card-subtitle>A few examples of directives in action!</mat-card-subtitle>
+    <mat-card-actions>
+      <div *ngFor="let item of directivesDef">
+        <button mat-raised-button type="submit" color="accent" (click)="viewKey = item">{{item}}</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div [ngSwitch]="viewKey">
+      <am-concat *ngSwitchCase="'Concat'"></am-concat>
+      <am-fork-join *ngSwitchCase="'ForkJoin'"></am-fork-join>
+      <am-merge-map *ngSwitchCase="'MergeMap'"></am-merge-map>
+      <am-pairwise *ngSwitchCase="'Pairwise'"></am-pairwise>
+      <am-switch-map *ngSwitchCase="'SwitchMap'"></am-switch-map>
+      <am-combine-latest *ngSwitchCase="'CombineLatest'"></am-combine-latest>
+
+      <am-date *ngSwitchCase="'Date'"></am-date>
+      <am-upper-case *ngSwitchCase="'UpperCase'"></am-upper-case>
+      <am-lower-case *ngSwitchCase="'LowerCase'"></am-lower-case>
+      <am-currency *ngSwitchCase="'Currency'"></am-currency>
+      <am-percent *ngSwitchCase="'Percent'"></am-percent>
+      <am-key-value *ngSwitchCase="'KeyValue'"></am-key-value>
+      <am-async *ngSwitchCase="'Async'"></am-async>
+    </div>
+  </div>
 </div>
